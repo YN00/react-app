@@ -1,7 +1,7 @@
 import { createBrowserRouter, redirect } from 'react-router-dom';
 import Home from '../components/Home/Home';
 
-export const router = createBrowserRouter([
+export const routes = [
   {
     path: '/',
     loader: () => redirect('/home'),
@@ -10,4 +10,10 @@ export const router = createBrowserRouter([
     path: '/home',
     element: <Home />,
   },
-]);
+  {
+    path: '/analysis',
+    element: null,
+  },
+];
+
+export const router = createBrowserRouter(routes);
