@@ -12,8 +12,17 @@ services:
       - "9000:3000" # 외부:내부
     environment:
       - NODE_ENV=development
+    networks:
+      - react
   nginx:
     container_name: nginx
     build:
       context: .
       dockerfile: nginx/dockerFile
+    networks:
+      - react
+    depends_on:
+      - react
+
+networks:
+  react:
