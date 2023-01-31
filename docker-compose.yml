@@ -12,6 +12,7 @@ services:
       - "9000:3000" # 외부:내부
     environment:
       - NODE_ENV=development
+      - TZ=Asia/Seoul
     networks:
       - react
   nginx:
@@ -21,6 +22,8 @@ services:
       dockerfile: nginx/dockerFile
     networks:
       - react
+    environment:
+      - TZ=Asia/Seoul
     depends_on:
       - react
 

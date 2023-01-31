@@ -1,6 +1,7 @@
 FROM node:18.13.0-alpine as build
 
 WORKDIR /app
+RUN apk add tzdata
 COPY package.json .
 RUN yarn set version berry
 COPY yarn.lock .yarnrc.yml ./
