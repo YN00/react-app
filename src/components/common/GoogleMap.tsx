@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
+import { Link, Outlet } from 'react-router-dom';
 
 const AnyReactComponent = ({ text }: { text: string }) => <div>{text}</div>;
 

@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import { Link, Outlet } from 'react-router-dom';
 
 import { findPathByName } from '../../router/findPathByName';
 
@@ -18,9 +18,10 @@ const Menus = () => {
           <ListItem key={i}>
             <ListItemButton
               sx={{ textAlign: 'center' }}
-              href={findPathByName(menu.toLowerCase())}
             >
-              <ListItemText primary={menu} />
+              <Link to={findPathByName(menu.toLowerCase())}>
+                <span style={{ color: 'black' }}>{menu}</span>
+              </Link>
             </ListItemButton>
           </ListItem>
         );
@@ -30,15 +31,17 @@ const Menus = () => {
 };
 
 const TopMenus = () => {
+  console.log('menus');
   return (
     <>
-      <AppBar position="static">
+      <AppBar>
         <Toolbar>
           <Menus />
         </Toolbar>
       </AppBar>
+      <Outlet />
     </>
   );
 };
 
-export default TopMenus;
+export default React.memo(TopMenus);
