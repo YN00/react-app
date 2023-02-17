@@ -31,7 +31,6 @@ const Menus = () => {
 };
 
 const TopMenus = () => {
-  console.log('menus');
   return (
     <>
       <AppBar>

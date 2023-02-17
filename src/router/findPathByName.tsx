@@ -5,7 +5,5 @@ export const findPathByName = (menuName: string): string => {
     return route.path.includes(menuName);
   });
 
-  console.log(i)
-
   return routes[0].children[i].path;
 };
