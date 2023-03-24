@@ -5,7 +5,7 @@ services:
     container_name: react
     build:
       context: .
-      dockerfile: dockerFile
+      dockerfile: Dockerfile
     volumes:
       - ".:/app"
     ports:
